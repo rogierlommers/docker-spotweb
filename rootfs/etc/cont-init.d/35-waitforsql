@@ -1,0 +1,9 @@
+#!/command/with-contenv bash
+
+if [[ "${DB_ENGINE}" = "pdo_mysql" || "${DB_ENGINE}" = "pdo_pgsql" ]]; then
+  until nc -z -v -w30 ${DB_HOST} ${DB_PORT}
+  do
+    echo "Waiting (5 seconds) for database connection at host '${DB_HOST}:${DB_PORT}'..."
+    sleep 5
+  done
+fi
