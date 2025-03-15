@@ -59,7 +59,7 @@ RUN apk --no-cache upgrade && \
     rm -rf /app/.git
 
 # Configure Spotweb
-COPY ./conf/spotweb /app
+#COPY ./conf/spotweb /app
 
 # Copy root filesystem
 COPY rootfs /
